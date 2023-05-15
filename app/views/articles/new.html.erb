@@ -1,0 +1,23 @@
+<h1>Publier un article</h1>
+<div class="form"> <%= form_with model: @article, local: true do |form| %>
+
+    <% if @article.errors.any? %>
+        <h2>Tous les champs sont obligatoires</h2>
+    <%end%>
+    <p>
+        <%= form.label :titre %><br>
+        <%= form.text_field :titre %>
+    </p>
+    <p>
+        <%= form.label :contenu %><br>
+        <%= form.text_area :contenu %>
+    </p>
+    <p>
+        <%= form.label :auteur %><br>
+        <%= form.text_field :auteur %>
+    </p>
+    <p>
+        <%= form.submit "Publier" %>
+    </p>
+<%end%>
+</div>

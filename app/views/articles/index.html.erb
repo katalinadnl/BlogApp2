@@ -1,0 +1,21 @@
+<h1> Liste d'articles</h1>
+<br>
+<div class= "link"> <%= link_to "Publier un article", new_article_path() %></div>
+<br>
+<% @articles.each do |article| %>
+    <h3><%= article.titre%></h3>
+    <div class="contenu"><%= article.contenu%></div>
+    <br>
+    <div>Publié par: <strong><%= article.auteur%></strong></div>
+    <div>Date de publication: <%= article.created_at%></div>
+    <br>
+    <div class= "link"> <%= link_to "Voir l'article", article_path(article) %></div>
+    <div class= "link"> <%= link_to "Editer l'article", edit_article_path(article) %></div>
+    <div class= "link"> <%= link_to "Supprimer", article_path(article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Confirmez-vous la supression?"
+                  } %></div>
+    <hr>
+<%end%>
+<br>
+<div class= "link"> <%= link_to "Returne à la page d'accueil", home_path%></div>

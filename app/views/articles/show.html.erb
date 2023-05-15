@@ -1,0 +1,8 @@
+<h2><%= @article.titre %> </h2>
+<%= @article.contenu %>
+<br>
+<div>Auteur: <strong> <%= @article.auteur %> </strong> </div>
+<div>Date de creation: <%= @article.created_at %> </div>
+<div>Modifié: <%= @article.created_at %> </div>
+
+<div class= "link"> <%= link_to "Retourne aux articles", articles_path%></div>
